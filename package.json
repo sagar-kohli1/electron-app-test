@@ -4,7 +4,7 @@
   "author": "ShipBob-PodFrog",
   "description": "ShipBob Back Office Application",
   "main": "./dist/electron/main.js",
-  "repository": "https://github.com/SagarKohli/TestApp",
+  "repository": "https://github.com/sagar-kohli1/electron-app-test",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
