@@ -1,0 +1,71 @@
+@import "../mixins";
+@import "../../variables";
+
+/* Shipbob Boostrap Dropdown Overrides */
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  padding: 0.375rem 0.975rem 0.275rem 1.175rem;
+
+  &:after {
+    position: relative;
+    top: 2px;
+    margin-left: .75em;
+    border-top-width: .35em;
+    border-right-width: .35em;
+    border-left-width: .35em;
+  }
+}
+
+.dropdown-menu {
+  padding-bottom: 0;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+
+  a:last-of-type {
+    margin-bottom: .75rem;
+  }
+}
+
+.dropdown-item {
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: #999da5;
+
+  &:hover {
+    color: $dark;
+    background: rgba(237,241,245,.52);
+  }
+
+  &.active,
+  &:active {
+    color: $dropdown-link-color;
+    background: rgba(237,241,245,.52);
+  }
+}
+
+.dropdown-divider {
+  margin-bottom: 0;
+  height: auto;
+  overflow: auto;
+  background: #edf1f5;
+  border-top: 0 none;
+
+  a:first-of-type {
+    margin-top: .5rem;
+  }
+
+  .dropdown-item {
+    &:hover {
+      background: rgba(255, 255, 255, 0.52);
+    }
+
+    &.active,
+    &:active {
+      color: $dropdown-link-color;
+      background: rgba(255, 255, 255, 0.52);
+    }
+  }
+}

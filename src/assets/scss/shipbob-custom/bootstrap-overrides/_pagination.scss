@@ -1,0 +1,30 @@
+@import "../mixins";
+@import "../../variables";
+
+/* Shipbob Bootstrap Pagination Overrides */
+
+.page-link {
+  text-decoration: none;
+  font-weight: 600;
+  background-image: linear-gradient(-180deg,#fff,#f9fafb);
+}
+
+.page-item {
+  &.active {
+    border-bottom: 1px solid $border-color;
+
+    .page-link {
+      background-image: linear-gradient(-180deg,#fff,#f9fafb);
+      border-bottom: 2px solid $primary;
+      padding-bottom: 6px;
+    }
+  }
+}
+
+.pagination-sm {
+  .page-link {
+    min-width: 2rem;
+    text-align: center;
+    font-size: 0.813rem;
+  }
+}

@@ -1,0 +1,14 @@
+/* Boostrap _grid.scss Shipbob Customization */
+
+.container-fluid,
+.row,
+.form-row,
+.col,
+[class*="col-"],
+.row > .col,
+.row > [class*="col-"],
+.form-row > .col,
+.form-row > [class*="col-"] {
+  margin: 0;
+  padding: 0;
+}

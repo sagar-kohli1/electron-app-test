@@ -1,0 +1,148 @@
+// Shipbob Boostrap Variables Overrides
+
+// Shipbob Boostrap Variables Overrides
+
+//
+// Color system
+//
+
+$white: #fff;
+$gray-base: #343e4f;
+$gray-100: lighten($gray-base, 85%);
+$gray-200: lighten($gray-base, 75%);
+$gray-300: lighten($gray-base, 65%);
+$gray-400: lighten($gray-base, 55%);
+$gray-500: lighten($gray-base, 45%);
+$gray-600: lighten($gray-base, 35%);
+$gray-700: lighten($gray-base, 25%);
+$gray-800: lighten($gray-base, 15%);
+$gray-900: lighten($gray-base, 0%);
+$black: #000;
+
+$grays: ();
+$grays: map-merge(( "100": $gray-100, "200": $gray-200, "300": $gray-300, "400": $gray-400, "500": $gray-500, "600": $gray-600, "700": $gray-700, "800": $gray-800, "900": $gray-900 ), $grays);
+
+$primary: #2470af;
+$secondary: #31991e;
+$success: $primary;
+$info: $secondary;
+$warning: #e59209;
+$danger: #8e1c1c;
+$disabled: #a8abb1;
+$light: lighten($gray-400, 5%);
+$dark: #3d444f;
+$main: #343e4f;
+
+$theme-colors: ();
+$theme-colors: map-merge(( "primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark ), $theme-colors);
+
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1rem;
+$spacers: ( 0: 0, 5: ($spacer * 0.313), 10: ($spacer * 0.625), 15: ($spacer * 0.938), 20: ($spacer * 1.250), 25: ($spacer * 1.563), 30: ($spacer * 1.875), 35: ($spacer * 2.188), 40: ($spacer * 2.5), 45: ($spacer * 2.813), 50: ($spacer * 3.125) );
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: ( 5: 5%, 10: 10%, 15: 15%, 20: 20%, 25: 25%, 30: 30%, 35: 35%, 40: 40%, 45: 45%, 50: 50%, 55: 55%, 60: 60%, 65: 65%, 70: 70%, 75: 75%, 80: 80%, 85: 85%, 90: 90%, 95: 95%, 100: 100% );
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg: $white;
+$body-color: $main;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: #2470af;
+$link-decoration: underline;
+$link-hover-color: darken($link-color, 20%);
+$link-hover-decoration: none;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0px,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1366px
+);
+
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: "Proxima Nova", sans-serif;
+$font-family-base: "Proxima Nova", sans-serif;
+
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+
+
+$h1-font-size: $font-size-base * 2.0;
+$h2-font-size: $font-size-base * 1.75;
+$h3-font-size: $font-size-base * 1.375;
+$h4-font-size: $font-size-base * 1.125;
+$h5-font-size: $font-size-base * 1.125;
+$h6-font-size: $font-size-base;
+
+//Borders
+$border-color: lighten($gray-400, 5%);
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+$table-border-color: $border-color;
+
+//Buttons
+// Allows for customizing button radius independently from global border radius
+$btn-font-size: 0.813rem;
+$btn-font-weight: 700;
+$btn-border-radius: 20px;
+
+
+// Forms
+$input-height: 38px;
+$input-color: $dark;
+$input-border-color: $border-color;
+$input-focus-color: $dark;
+$input-placeholder-color: $gray-400;
+$input-focus-border-color: $gray-500;
+$input-focus-box-shadow: none;
+
+$input-group-addon-color: $input-color;
+$input-group-addon-bg: white;
+$input-group-addon-border-color: $input-border-color;
+
+//Pagination
+$pagination-padding-y-sm: .5rem;
+$pagination-padding-x-sm: .8rem;
+
+$pagination-color: $link-color;
+$pagination-bg: $white;
+$pagination-border-color: $border-color;
+
+$pagination-focus-box-shadow: none;
+
+$pagination-hover-color: $link-hover-color;
+$pagination-hover-bg: none;
+$pagination-hover-border-color: none;
+
+$pagination-active-color: $primary;
+$pagination-active-bg: $white;
+$pagination-active-border-color: $border-color;
+
+$pagination-disabled-color: $gray-400;
+$pagination-disabled-bg: $white;
+$pagination-disabled-border-color: $border-color;

@@ -1,0 +1,63 @@
+@import "../mixins";
+@import "../../variables";
+
+/* Shipbob Custom Headers */
+
+.table-page-header {
+  &.container-fluid, &.container {
+    margin: 0;
+    padding: 0.938rem 1.875rem;
+
+    .row, .col, .col-auto {
+      margin: 0;
+      padding: 0;
+    }
+
+    .row {
+      flex-wrap: nowrap;
+    }
+
+    .actions {
+      text-align: right;
+    }
+
+    .col {
+      &.search {
+        margin: 0 1.875rem;
+        min-width: 130px;
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+    .description {
+      flex: 0 0 70%;
+      color: lighten($dark, 30%);
+      font-weight: 600;
+    }
+
+    @include media-breakpoint-down(sm) {
+      .row, .col-auto, .col {
+        flex: 0 0 100%;
+        flex-wrap: wrap;
+      }
+
+      .col {
+        &.search {
+          margin: 0 0 1.250rem 0;
+          min-width: initial;
+          max-width: none;
+        }
+
+        &.actions {
+          margin-bottom: 1.250rem;
+          text-align: left;
+        }
+      }
+
+      .description {
+        flex: 0 0 100%;
+      }
+    }
+  }
+}

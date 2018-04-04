@@ -1,0 +1,154 @@
+@import "../mixins";
+@import "../../variables";
+
+/* Shipbob Bootstrap Nav Overrides */
+
+/* Header & Footer Component - See navbar.scss */
+/* Progress Component - See progress.scss */
+
+/* Primary Navigation */
+.primary-nav {
+  height: calc(100% - 109px);
+  max-width: 256px;
+  background-color: #343e4f;
+
+  .nav-link {
+    padding: 0.625rem 1.875rem;
+    border-radius: 0;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+
+    &:before, &:after {
+      @include icomoon;
+      font-size: 1.125rem;
+    }
+
+    &:before {
+      font-weight: 400;
+      opacity: .49;
+      padding-right: 0.625rem;
+      position: relative;
+      top: 2px;
+    }
+
+    &:after {
+      content: "\e900";
+      opacity: 0;
+      position: absolute;
+      top: 10px;
+      right: 30px;
+      transition: all .4s ease-in-out;
+    }
+
+    &:hover {
+      background-color: #1a2536;
+
+      &:before {
+        font-weight: 600;
+        opacity: 1;
+      }
+
+      &:after {
+        opacity: 1;
+        top: 10px;
+        right: 20px;
+        transition: all .4s ease-in-out;
+      }
+    }
+
+    &:active,
+    &.active {
+      background-color: $link-color;
+
+      &:before {
+        font-weight: 600;
+        opacity: 1;
+      }
+    }
+
+    &:not(.collapsed) {
+      background-color: $link-color;
+
+      &:after,
+      &:before {
+        opacity: 1;
+      }
+
+      &:after {
+        right: 20px;
+      }
+
+      &.expander:after {
+        opacity: 1;
+        @include rotate(90deg);
+        top: 8px;
+        right: 20px
+      }
+    }
+
+    &.dashboard:before {
+      content: "\e901";
+    }
+
+    &.orders:before {
+      content: "\e902";
+    }
+
+    &.products:before {
+      content: "\e904";
+    }
+
+    &.contacts:before {
+      content: "\e905";
+    }
+
+    &.reports:before {
+      content: "\e903";
+    }
+  }
+
+  .subnav {
+    .nav-link {
+      padding: 0.5rem 3.750rem;
+      font-size: 0.875rem;
+      color: #a2a6ad;
+
+      &:after {
+        right: 30px;
+        top: 5px;
+      }
+
+      &:hover {
+        color: white;
+      }
+
+      &:not(.collapsed) {
+        background-color: #1a2536;
+
+        &:after {
+          opacity: 0;
+        }
+
+        &:hover {
+          &:after {
+            opacity: 1;
+            right: 20px;
+          }
+        }
+        /* Setting this on focus because once a user has clicked on a subnav link an active state is added and when not expanded it does not clear that active state this will mimic the active state when clicked on */
+        &:focus,
+        &.focus {
+          color: white;
+          background-color: $link-color;
+
+          &:after {
+            opacity: 1;
+            right: 20px;
+          }
+        }
+      }
+    }
+  }
+}

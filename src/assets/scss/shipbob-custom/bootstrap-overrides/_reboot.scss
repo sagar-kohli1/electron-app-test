@@ -1,0 +1,14 @@
+@import "../mixins";
+@import "../../variables";
+
+/* Boostrap _reboot.scss Shipbob Customization */
+
+html {
+  @include proxima-nova;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  @include proxima-nova;
+  -webkit-font-smoothing: antialiased;
+}

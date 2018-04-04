@@ -1,0 +1,57 @@
+/* Shipbob Bootstrap Progress Overrides */
+
+.quick-setup-wrapper {
+  position: relative;
+  bottom: 0;
+	display: inline-block;
+	width: 256px;
+  height: 51px;
+	padding: 0.438rem 0 0.875rem;
+	background-color: $secondary;
+	font-size: 0.9375rem;
+	font-weight: 700;
+	color: white;
+	text-decoration: none;	
+	
+	&:hover {
+		color: white;
+	}
+	
+	.quick-setup {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 1.250rem;
+
+		span:not(.progress-percentage) {
+			position: relative;
+			top: -4px;
+			
+			&:before {
+				@include icomoon;
+				font-size: 1.125rem;
+				font-weight: normal;
+				content: "\f0e7";
+				padding-right: 0.625rem;
+				position: relative;
+				top: 3px;
+			}
+		}
+		
+		.progress-percentage {
+		    color: white;
+			font-size: 0.688rem;
+			font-style: italic;
+		}
+	}
+	
+	.progress {
+		height: 3px;
+		margin: 0 0.938rem;
+		background-color: rgba(0,0,0,.12);
+	}
+	
+	.progress-bar {
+		background-color: rgba(0,0,0,.21);
+	}
+}

@@ -1,0 +1,448 @@
+@import "../../_mixins.scss";
+@import "../../../variables";
+
+
+a {
+  color: #2470af;
+  cursor: pointer;
+}
+
+img {
+  border: none;
+  outline: none;
+}
+
+.btn-legacy {
+  position: relative;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+
+  &:focus, &.focus {
+    box-shadow: none;
+  }
+}
+
+.btn--control {
+  background: #1b5585;
+  display: block;
+  height: 3.625em;
+  width: 3.625em;
+  text-align: center;
+  line-height: 4.8rem;
+}
+
+.btn--navcontrol {
+  padding: .5em 0 0;
+
+  .line {
+    width: 40px;
+    height: 4px;
+    background-color: #ecf0f1;
+    display: block;
+    margin: 8px auto;
+    transition: all .3s ease-in-out;
+  }
+}
+
+.btn--control--nobg {
+  background: transparent;
+}
+
+.notifications {
+  position: relative;
+  float: right;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.l-header {
+  background: #2470af;
+  float: left;
+  height: 3.625em;
+  max-width: 256px;
+  min-width: 256px;
+  padding: 1em 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 30;
+
+  .logo {
+    float: left;
+  }
+
+  .logo img {
+    height: 100%;
+    max-height: 25px;
+  }
+
+  .btn--navcontrol {
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all .5s ease-in-out;
+  }
+
+  .notifications {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .btn--control {
+      .count {
+        background: #af2424;
+        border-radius: 10px;
+        color: #fff;
+        float: right;
+        font-size: .6875rem;
+        font-weight: 500;
+        height: 1.1875rem;
+        line-height: 1.1875rem;
+        min-width: 1.1875rem;
+        padding: 0 .5em;
+        position: absolute;
+        right: .7em;
+        text-align: center;
+        top: .7em;
+      }
+    }
+
+    .btn--notifications:before {
+      font-family: icomoon;
+      @extend .icon-bell2;
+      speak: none;
+      font-style: normal;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      color: #fff;
+      font-size: 2em;
+      position: relative;
+      bottom: 0;
+    }
+  }
+}
+
+.l-sidebar {
+  background: #343e4f;
+  float: left;
+  width: 256px;
+  position: fixed;
+  left: 0;
+  top: 58px;
+  height: calc(100% - 58px);
+  z-index: 20;
+
+  .nav--primary {
+    height: calc(100% - 110px);
+    background: #343e4f;
+    display: block;
+    width: 100%;
+  }
+
+  .sidebar-scroll-area {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .nav--primary__btn {
+    clear: both;
+    line-height: 3.4em;
+    float: left;
+    width: 100%;
+    text-decoration: none;
+    background: #343e4f;
+    color: #fff !important;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: 600;
+    overflow-x: hidden;
+
+    &:before {
+      @include icomoon;
+      float: left;
+      font-size: 1.5em;
+      line-height: 2.2em;
+      margin: 0 20px 0 0;
+      color: white;
+      opacity: 0.49;
+    }
+
+    &:hover {
+      background: #1a2536;
+      color: #fff;
+    }
+
+    &.primary__btn--dashboard:before {
+      content: "\e901";
+    }
+
+    &.primary__btn--orders:before {
+      content: "\e902";
+    }
+
+    &.primary__btn--new-order:before {
+      content: "\e902";
+    }
+
+    &.primary__btn--sync-orders:before {
+      content: "\e902";
+    }
+
+    &.primary__btn--inventory:before {
+      content: "\e904";
+    }
+
+    &.primary__btn--contacts:before {
+      content: "\e905";
+    }
+
+    &.primary__btn--calc:before {
+      content: "\e905";
+    }
+
+    &.primary__btn--returns:before {
+      content: "\e905";
+    }
+
+    &.primary__btn--reports:before {
+      content: "\e903";
+    }
+
+    &.primary__btn--billing:before {
+      content: "$";
+      font-size: 1.37em;
+    }
+
+    &:after {
+      @include icomoon;
+      content: "\e900";
+      color: #797e85;
+      float: right;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      font-size: 1.5em;
+      line-height: 3.4rem;
+      margin-right: -0.3rem;
+    }
+
+    &:hover:after {
+      opacity: 1;
+      margin-right: -0.7rem;
+    }
+
+    &.primary__btn--orders,
+    &.primary__btn--returns,
+    &.primary__btn--orders,
+    &.primary__btn--reports {
+      &:after {
+        @include rotate(90deg);
+      }
+    }
+  }
+
+  .nav--primary__btn:hover, .nav--primary__btn--active {
+    &:before {
+      opacity: 1;
+    }
+
+    &:after {
+      color: white;
+    }
+  }
+
+  .nav--primary__btn--active {
+    background: #2470af;
+
+    &:after {
+      @include icomoon;
+      color: #fff;
+      content: "\e900";
+      float: right;
+      font-size: 1.5em;
+      line-height: 3.4rem;
+      margin-right: -0.7rem;
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .nav--primary__subnav {
+    display: none;
+    background: #1a2536;
+    padding-bottom: 1em;
+
+    &.nav--primary__subnav--active {
+      display: block;
+    }
+  }
+
+  .nav--primary__subnavbtn {
+    color: #a2a6ad;
+    display: block;
+    font-size: .875em;
+    font-weight: 600;
+    line-height: 1.25em;
+    text-decoration: none;
+    padding-left: 75px;
+    line-height: 2.1rem;
+    overflow: hidden;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .nav--primary__subnavtitle {
+    color: #fff;
+    display: none;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.25em;
+    margin: 0;
+    padding: .8rem 0;
+    text-align: center;
+  }
+
+  .btn--progress {
+    position: absolute;
+    left: 0;
+    bottom: 57px;
+    background: #31991e;
+    color: #fff !important;
+    float: left;
+    font-size: .9375em;
+    font-weight: 600;
+    padding: .5em 0 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &:before {
+      @include icomoon;
+      speak: none;
+      font-style: normal;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      content: "\f0e7";
+      float: left;
+      margin: .2rem .4rem;
+      font-size: 1.2em;
+    }
+
+    &.btn__label {
+      position: relative;
+      left: -55px;
+    }
+  }
+
+  .btn--progress__bar {
+    width: 100%;
+    display: block;
+    height: 3px;
+    background: rgba(0,0,0,.12);
+    margin-bottom: .8em;
+    margin-top: .5em;
+    position: relative;
+  }
+
+  .btn--progress__number {
+    color: rgba(0,0,0,.5);
+    font-size: .6875rem;
+    position: absolute;
+    right: 20px;
+    top: .6rem;
+  }
+
+  .btn--account-settings {
+    position: absolute;
+    bottom: 0;
+    left: 55px;
+    width: calc(100% - 55px);
+    height: 57px;
+    background: #242c38;
+    color: #a2a6ad;
+    display: block;
+    font-size: .9375em;
+    font-weight: 600;
+
+    &:after {
+      @include icomoon;
+      font-size: 1.5em;
+      content: "\e900";
+      color: #242c38;
+      position: relative;
+      top: 12px;
+      left: 35px;
+      transition: all .3s ease-in-out;
+    }
+
+    &:hover {
+      color: white;
+    }
+
+    &:hover:after {
+      @include icomoon;
+      font-size: 1.5em;
+      content: "\e900";
+      color: #797e85;
+      opacity: 1;
+      position: relative;
+      top: 12px;
+      left: 40px;
+      transition: all .3s ease-in-out;
+    }
+
+    .btn__label {
+      position: relative;
+      left: 25px;
+      top: 8px;
+    }
+  }
+
+  .btn--account-settings__avatar {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    left: 18px;
+    top: 6px;
+  }
+
+  .btn--log-out {
+    width: 55px;
+    background: #161a21;
+    left: 0;
+    bottom: 0;
+    height: 57px;
+    position: absolute;
+
+    .btn__label {
+      &:before {
+        @include icomoon;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        content: "\ea14";
+        color: rgba(255, 255, 255, 0.5);
+        float: left;
+        font-size: 1.875em;
+        position: relative;
+        top: 15px;
+        left: 14px;
+      }
+    }
+  }
+}

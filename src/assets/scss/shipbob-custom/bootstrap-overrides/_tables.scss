@@ -1,0 +1,70 @@
+@import "../mixins";
+@import "../../variables";
+
+/* Shipbob Bootstrap Table Overrides */
+
+.table {
+  margin-bottom: 0;
+
+  th, td {
+    padding: 0.5rem 0.8rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    overflow: hidden;
+
+    &.number {
+      text-align: right;
+    }
+  }
+
+  th {
+    font-size: 0.750rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $gray-900;
+  }
+
+  td {
+    font-size: 0.875rem;
+    color: darken($gray-700, 5%);
+  }
+
+  &.table-bordered {
+    thead {
+      th, td {
+        border-bottom-width: 1px;
+      }
+    }
+  }
+
+  &.table-sortable {
+    th {
+      cursor: pointer;
+
+      &.sort-descend:before {
+        font-family: icomoon;
+        @extend .icon-sort-desc;
+        font-size: 13px;
+        position: relative;
+        top: -2px;
+        padding-right: 5px;
+        color: lighten($gray-900, 10%);
+      }
+
+      &.sort-ascend:before {
+        font-family: icomoon;
+        @extend .icon-sort-asc;
+        font-size: 13px;
+        position: relative;
+        top: 5px;
+        padding-right: 5px;
+        color: lighten($gray-900, 10%);
+      }
+
+      &.not-sortable {
+        cursor: auto;
+      }
+    }
+  }
+}

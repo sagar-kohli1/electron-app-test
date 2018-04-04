@@ -1,0 +1,114 @@
+@import "../mixins";
+@import "../../variables";
+
+/* Shipbob Bootstrap Input-Group Overrides */
+
+.input-group {
+  &.append-group-wrapper {
+    height: $input-height;
+
+    .form-control {
+      border-right: 0 none;
+    }
+
+    .input-group-text {
+      color: lighten($main, 20%);
+    }
+
+    &.search {
+      flex-wrap: nowrap;
+      border-radius: $btn-border-radius;
+
+      .form-control {
+        padding-left: 1.2rem;
+        border-top-left-radius: $btn-border-radius;
+        border-bottom-left-radius: $btn-border-radius;
+      }
+
+      .input-group-text {
+        font-family: icomoon;
+        @extend .icon-search;
+        border-left: 0 none;
+        border-top-right-radius: $btn-border-radius;
+        border-bottom-right-radius: $btn-border-radius;
+
+        &:before {
+          color: $gray-300;
+          @include rotate(270deg);
+          position: relative;
+          top: -1px;
+        }
+      }
+
+      .form-control:focus + .input-group-append {
+        border-top-right-radius: $btn-border-radius;
+        border-bottom-right-radius: $btn-border-radius;
+      }
+    }
+  }
+  /* Changing the order of the input group from 1 to 0 to allow us to get the border around the prepended group and the main input */
+  &.prepend-group-wrapper {
+    .form-control {
+      order: 1;
+      border-left: 0 none;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+      padding-left: 1px;
+    }
+
+    .input-group-prepend {
+      order: 0;
+
+      .input-group-text {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+        color: lighten($main, 20%);
+      }
+    }
+  }
+
+  .input-group-prepend {
+    /* Overrides for button attached to input */
+    .btn {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+      color: #999da5;
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      &:focus,
+      &.focus {
+        border: 2px solid $input-focus-border-color;
+        color: $dropdown-link-color;
+      }
+
+      &:active {
+        color: $dark;
+        background-color: transparent;
+      }
+
+      &.dropdown-toggle {
+        background-color: transparent;
+
+        &:active {
+          color: $dark;
+        }
+
+        &:focus {
+          box-shadow: none;
+          background-color: transparent;
+          border: 2px solid $input-focus-border-color;
+          padding-right: 0.912rem;
+          padding-left: 1.113rem;
+          color: $dark;
+        }
+      }
+    }
+  }
+}

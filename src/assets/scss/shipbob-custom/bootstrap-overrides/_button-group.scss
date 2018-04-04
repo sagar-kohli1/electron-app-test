@@ -1,0 +1,44 @@
+@import "../mixins";
+@import "../../variables";
+
+/* Shipbob Boostrap Button Group Overrides */
+
+.btn-group {
+  > .btn:not(:first-child):not(.dropdown-toggle),
+  > .btn-group:not(:first-child) > .btn {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  > .btn:not(:last-child):not(.dropdown-toggle),
+  > .btn-group:not(:last-child) > .btn {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  > .btn:first-child,
+  > .btn-group:first-child > .btn {
+    padding-left: 1.25rem;
+  }
+
+  > .btn:last-child,
+  > .btn-group:last-child > .btn {
+    padding-left: .75rem;
+    padding-right: 1.25rem;
+  }
+
+  > .btn:not(:first-child),
+  > .btn:not(:last-child) {
+    &.btn-primary,
+    &.btn-primary:focus {
+      box-shadow: 0px 3px 0.1px darken($primary, 10%);
+    }
+
+    &.btn-secondary,
+    &.btn-secondary:focus {
+      box-shadow: 0px 3px 0.1px darken($secondary, 10%);
+    }
+  }
+}
