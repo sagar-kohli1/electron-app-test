@@ -29,10 +29,7 @@ build_script:
 test: off
 
 artifacts:
-- path: '*latest.yml'
-  name: yml
-- path: '*.exe'
-- path: '*.exe.blockmap'
+- path: '*.*'
 
 deploy:
 - provider: GitHub
