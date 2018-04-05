@@ -27,3 +27,12 @@ build_script:
   - npm run build
 
 test: off
+
+deploy:
+- provider: GitHub
+  tag: testapptag-v$(appveyor_build_version)
+  release: testapp-v$(appveyor_build_version)
+  description: TestApp
+  auth_token:
+    secure: WephiGZ+EppD8feBRPuQCQ9ENF/Hws3RB9QmjSbOTdcRceoloqr7+abU5V5czgR4
+  force_update: true
