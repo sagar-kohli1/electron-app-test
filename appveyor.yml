@@ -1,4 +1,6 @@
-version: 0.4.{build}
+version: 1.0.{build}
+environment:
+  GH_TOKEN: 770c923d6c387ac313754b6df58ef5fe66d11684
 
 branches:
   only:
@@ -34,9 +36,8 @@ deploy:
   description: 'TestApp'
   provider: GitHub
   auth_token:
-    secure: af4b8f5c46c2ab37e07eec2bf0d4e6b17a297abb # your encrypted token from GitHub
+    secure: 770c923d6c387ac313754b6df58ef5fe66d11684 # your encrypted token from GitHub
   draft: false
   prerelease: false
   on:
     branch: master                 # release from master branch only
-    appveyor_repo_tag: true        # deploy on tag push only
