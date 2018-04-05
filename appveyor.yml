@@ -29,7 +29,7 @@ build_script:
 test: off
 
 artifacts:
-- path: '*.*'
+- path: 'build/*.*'
 
 deploy:
 - provider: GitHub
