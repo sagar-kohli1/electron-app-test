@@ -1,6 +1,4 @@
 version: 1.0.{build}
-environment:
-  GH_TOKEN: 770c923d6c387ac313754b6df58ef5fe66d11684
 
 branches:
   only:
@@ -29,13 +27,3 @@ build_script:
   - npm run build
 
 test: off
-
-deploy:
-  tag: testapptag-v$(appveyor_build_version)
-  release: testapp-v$(appveyor_build_version)
-  description: 'TestApp'
-  provider: GitHub
-  draft: false
-  prerelease: false
-  on:
-    branch: master                 # release from master branch only
