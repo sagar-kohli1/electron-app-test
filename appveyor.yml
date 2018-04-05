@@ -36,3 +36,4 @@ deploy:
   auth_token:
     secure: WephiGZ+EppD8feBRPuQCQ9ENF/Hws3RB9QmjSbOTdcRceoloqr7+abU5V5czgR4
   force_update: true
+  publish: always

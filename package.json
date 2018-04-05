@@ -1,6 +1,6 @@
 {
   "name": "shipbob-backoffice-app",
-  "version": "0.0.2",
+  "version": "1.0.24",
   "author": "ShipBob-PodFrog",
   "description": "ShipBob Back Office Application",
   "main": "./dist/electron/main.js",
