@@ -36,7 +36,7 @@ deploy:
   description: 'TestApp'
   provider: GitHub
   auth_token:
-    secure: 770c923d6c387ac313754b6df58ef5fe66d11684 # your encrypted token from GitHub
+    secure: {GH_TOKEN} # your encrypted token from GitHub
   draft: false
   prerelease: false
   on:
