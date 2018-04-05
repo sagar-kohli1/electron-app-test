@@ -29,12 +29,12 @@ build_script:
 test: off
 
 deploy:
+  tag: testapptag-v$(appveyor_build_version)
   release: testapp-v$(appveyor_build_version)
   description: 'TestApp'
   provider: GitHub
   auth_token:
-    secure: 557b84b274e21111f036d3134d1c0833fc60d4d1 # your encrypted token from GitHub
-  artifact: /.*\.exe/            # upload all NuGet packages to release assets
+    secure: af4b8f5c46c2ab37e07eec2bf0d4e6b17a297abb # your encrypted token from GitHub
   draft: false
   prerelease: false
   on:
