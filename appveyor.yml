@@ -33,8 +33,8 @@ artifacts:
 
 deploy:
 - provider: GitHub
-  tag: testapp-v1.0.34
-  release: testapp-v$(appveyor_build_version)
+  tag: sb-app
+  release: sb-backofficeapp-v-$(appveyor_build_version)
   description: TestApp
   auth_token:
     secure: WephiGZ+EppD8feBRPuQCQ9ENF/Hws3RB9QmjSbOTdcRceoloqr7+abU5V5czgR4
