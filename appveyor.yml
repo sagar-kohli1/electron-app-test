@@ -33,7 +33,7 @@ artifacts:
 
 deploy:
 - provider: GitHub
-  tag: testapptag-v$(appveyor_build_version)
+  tag: testapp-v1.0.34
   release: testapp-v$(appveyor_build_version)
   description: TestApp
   auth_token:
