@@ -35,8 +35,8 @@ deploy:
   release: testapp-v$(appveyor_build_version)
   description: 'TestApp'
   provider: GitHub
-  auth_token:
-    secure: {GH_TOKEN} # your encrypted token from GitHub
+auth_token:
+    secure: WephiGZ+EppD8feBRPuQCQ9ENF/Hws3RB9QmjSbOTdcRceoloqr7+abU5V5czgR4
   draft: false
   prerelease: false
   on:
