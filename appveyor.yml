@@ -1,5 +1,5 @@
 version: 1.0.{build}
-
+skip_tags: true
 branches:
   only:
     - master
@@ -36,8 +36,10 @@ artifacts:
 
 deploy:
 - provider: GitHub
+  tag: testapptag-v$(appveyor_build_version)
+  release: testapp-v$(appveyor_build_version)
   description: TestApp
   auth_token:
     secure: WephiGZ+EppD8feBRPuQCQ9ENF/Hws3RB9QmjSbOTdcRceoloqr7+abU5V5czgR4
+  draft: false
   force_update: false
-  publish: always
